@@ -1,0 +1,9 @@
+#!/bin/sh
+
+
+# rm -rf build_out/hosal
+rm -rf build_out/Project
+rm -rf build_out/ailink
+
+make CONFIG_CHIP_NAME=BL602 CONFIG_LINK_ROM=1 CONFIG_BLE_TP_SERVER=1 CONFIG_BLECONTROLLER_LIB=$3 -j
+exit $?

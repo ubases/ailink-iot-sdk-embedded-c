@@ -1,0 +1,14 @@
+## add libs
+COMPONENT_LIB_ONLY := 3
+
+LIB_DIR := lib
+LIBS := Ailink
+COMPONENT_ADD_LDFLAGS += -L$(COMPONENT_PATH)/$(LIB_DIR) $(addprefix -l,$(LIBS))
+ALL_LIB_FILES := $(patsubst %,$(COMPONENT_PATH)/$(LIB_DIR)/lib%.a,$(LIBS))
+COMPONENT_ADD_LINKER_DEPS := $(ALL_LIB_FILES)
+
+##
+#CPPFLAGS +=
+
+
+
